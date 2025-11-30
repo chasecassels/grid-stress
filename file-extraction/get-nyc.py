@@ -12,16 +12,31 @@ nyc_boundary = nyc_boundary.to_crs(epsg=4326)
 
 target_folder = "../source-data"
 nyc_files = []
-FILE_ID = "9dcy2"
+yrs = []
 
-meta = requests.get(f"https://api.osf.io/v2/files/{FILE_ID}/").json()
-file_data = meta["data"]
-filename = file_data["attributes"]["name"]
-download_url = file_data["links"]["download"]
+PARENT_ID = "5dp8e"
+url = f"https://api.osf.io/v2/nodes/{PARENT_ID}/children/"
 
-content = requests.get(download_url).content
-output_path = os.path.join(target_folder, filename)
+yrs = []
 
-with open(output_path, "wb") as f:
-    f.write(content)
-    print("Saved " + filename + " in " + target_folder)
+while url:
+    resp = requests.get(url).json()
+
+    for child in resp["data"]:
+        print(child["id"])
+        yrs.append(child["id"])
+
+    url = resp["links"].get("next")
+
+
+
+#file_data = meta["data"]
+#filename = file_data["attributes"]["name"]
+#download_url = file_data["links"]["download"]
+
+#content = requests.get(download_url).content
+#output_path = os.path.join(target_folder, filename)
+
+#with open(output_path, "wb") as f:
+#    f.write(content)
+#    print("Saved " + filename + " in " + target_folder)
