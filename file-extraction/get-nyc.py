@@ -34,10 +34,8 @@ while parent_url:
 def download_file(file):
     filename = file["attributes"]["name"]
     download_url = file["links"]["download"]
-
     content = requests.get(download_url).content
     output_path = os.path.join(target_folder, filename)
-
     with open(output_path, "wb") as f:
         f.write(content)
         print("Saved " + filename + " in " + target_folder, flush=True)
@@ -47,7 +45,6 @@ def download_file(file):
 for i in range(len(yrs)):
     year_id = yrs[i]
     year_url = f"https://api.osf.io/v2/nodes/{year_id}/files/osfstorage/"
-
     while year_url:
         resp = requests.get(year_url).json()
         for file in resp["data"]:
@@ -57,5 +54,3 @@ for i in range(len(yrs)):
                 nyc_files.append(file["attributes"]["name"])
                 download_file(file)
         year_url = resp["links"].get("next")
-
-
