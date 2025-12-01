@@ -7,4 +7,4 @@ SELECT
 	"Ta" AS Temperature,
 	"RH" AS Humidity
 FROM
-	"S725030_2001"
+	S725030_2001

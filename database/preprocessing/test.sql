@@ -1,0 +1,1 @@
+SELECT count(*) FROM S725030_2001
