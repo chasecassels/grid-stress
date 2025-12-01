@@ -13,9 +13,9 @@ nyc_boundary = nyc_boundary.union_all()
 
 #test projection
 if nyc_boundary.contains(Point(-74.0060, 40.7128)):
-    print(True)
+    print("Projection test passed", flush=True)
 else:
-    print(False)
+    print("Projection error", flush=True)
 
 target_folder = "../source-data"
 nyc_files = []
@@ -42,23 +42,23 @@ def download_file(file):
 
     with open(output_path, "wb") as f:
         f.write(content)
-        print("Saved " + filename + " in " + target_folder)
+        print("Saved " + filename + " in " + target_folder, flush=True)
 
 
-#Retrieve all files from an individual year with location in nyc boundary
-year_id = yrs[0]
-year_url = f"https://api.osf.io/v2/nodes/{year_id}/files/osfstorage/"
+#Retrieve all files with location in nyc boundary
 
-while year_url:
-    resp = requests.get(year_url).json()
-    for file in resp["data"]:
-        match = re.search(r"Lat_([-\d\.]+)_Lon_([-\d\.]+)", file["attributes"]["name"])
-        lat, lon = float(match.group(1)), float(match.group(2))
-        if nyc_boundary.contains(Point(lon, lat)):
-            nyc_files.append(file["attributes"]["name"])
-            download_file(file)
-    year_url = resp["links"].get("next")
+for i in range(len(yrs)):
+    year_id = yrs[i]
+    year_url = f"https://api.osf.io/v2/nodes/{year_id}/files/osfstorage/"
 
-print(nyc_files)
+    while year_url:
+        resp = requests.get(year_url).json()
+        for file in resp["data"]:
+            match = re.search(r"Lat_([-\d\.]+)_Lon_([-\d\.]+)", file["attributes"]["name"])
+            lat, lon = float(match.group(1)), float(match.group(2))
+            if nyc_boundary.contains(Point(lon, lat)):
+                nyc_files.append(file["attributes"]["name"])
+                download_file(file)
+        year_url = resp["links"].get("next")
 
 
