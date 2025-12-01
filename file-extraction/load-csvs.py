@@ -3,7 +3,7 @@ import sqlite3
 import os
 
 folder_path = "../source-data"
-db_path = "weather-data.db"
+db_path = "../database/weather-data.db"
 conn = sqlite3.connect(db_path)
 
 for filename in os.listdir(folder_path):
@@ -12,8 +12,8 @@ for filename in os.listdir(folder_path):
         df = pd.read_csv(file_path)
         table_name = os.path.splitext(filename)[0]
         df.to_sql(table_name, conn, if_exists="replace", index=False)
-        print(f"Imported '{filename}' into table '{table_name}'")
+        print(f"Imported '{filename}' into table '{table_name}'", flush=True)
 
 conn.commit()
 conn.close()
-print("All files imported successfully!")
+print("All files imported successfully!", flush=True)
