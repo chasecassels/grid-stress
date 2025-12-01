@@ -9,34 +9,56 @@ from shapely.geometry import Point
 
 nyc_boundary = gpd.read_file("nybb_25c/nybb.shp")
 nyc_boundary = nyc_boundary.to_crs(epsg=4326)
+nyc_boundary = nyc_boundary.union_all()
+
+#test projection
+if nyc_boundary.contains(Point(-74.0060, 40.7128)):
+    print(True)
+else:
+    print(False)
 
 target_folder = "../source-data"
 nyc_files = []
 yrs = []
 
+#Retrieve ID's for individual years from parent project
 PARENT_ID = "5dp8e"
-url = f"https://api.osf.io/v2/nodes/{PARENT_ID}/children/"
+parent_url = f"https://api.osf.io/v2/nodes/{PARENT_ID}/children/"
 
-yrs = []
-
-while url:
-    resp = requests.get(url).json()
-
+while parent_url:
+    resp = requests.get(parent_url).json()
     for child in resp["data"]:
-        print(child["id"])
         yrs.append(child["id"])
-
-    url = resp["links"].get("next")
-
+    parent_url = resp["links"].get("next")
 
 
-#file_data = meta["data"]
-#filename = file_data["attributes"]["name"]
-#download_url = file_data["links"]["download"]
+#file download function
+def download_file(file):
+    filename = file["attributes"]["name"]
+    download_url = file["links"]["download"]
 
-#content = requests.get(download_url).content
-#output_path = os.path.join(target_folder, filename)
+    content = requests.get(download_url).content
+    output_path = os.path.join(target_folder, filename)
 
-#with open(output_path, "wb") as f:
-#    f.write(content)
-#    print("Saved " + filename + " in " + target_folder)
+    with open(output_path, "wb") as f:
+        f.write(content)
+        print("Saved " + filename + " in " + target_folder)
+
+
+#Retrieve all files from an individual year with location in nyc boundary
+year_id = yrs[0]
+year_url = f"https://api.osf.io/v2/nodes/{year_id}/files/osfstorage/"
+
+while year_url:
+    resp = requests.get(year_url).json()
+    for file in resp["data"]:
+        match = re.search(r"Lat_([-\d\.]+)_Lon_([-\d\.]+)", file["attributes"]["name"])
+        lat, lon = float(match.group(1)), float(match.group(2))
+        if nyc_boundary.contains(Point(lon, lat)):
+            nyc_files.append(file["attributes"]["name"])
+            download_file(file)
+    year_url = resp["links"].get("next")
+
+print(nyc_files)
+
+
