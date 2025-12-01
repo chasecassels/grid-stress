@@ -1,5 +1,3 @@
-#Downloads NYC station CSVs from CHUWD-H v1.0 project (from Open Science Foundation)
-
 import re
 import requests
 import os
@@ -21,7 +19,7 @@ target_folder = "../source-data"
 nyc_files = []
 yrs = []
 
-#Retrieve ID's for individual years from parent project
+#retrieve ID's for individual years from parent project
 PARENT_ID = "5dp8e"
 parent_url = f"https://api.osf.io/v2/nodes/{PARENT_ID}/children/"
 
@@ -45,8 +43,7 @@ def download_file(file):
         print("Saved " + filename + " in " + target_folder, flush=True)
 
 
-#Retrieve all files with location in nyc boundary
-
+#retrieve all files with location in nyc boundary
 for i in range(len(yrs)):
     year_id = yrs[i]
     year_url = f"https://api.osf.io/v2/nodes/{year_id}/files/osfstorage/"
