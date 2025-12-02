@@ -1,10 +1,22 @@
 Three all-years NYC Weather data tables exist in weather-data.db
 
+
 S725030 
-Lat: 40.78, Lon: -73.88, Landmark: LaGuardia Airport, Queens
+Lat: 40.78
+Lon: -73.88
+Landmark: LaGuardia Airport, Queens
+Missing years: 2010, 2020
+
 
 S725033 
-Lat: 40.78, Lon: -73.97, Landmark: Central Park, Manhattan
+Lat: 40.78
+Lon: -73.97
+Landmark: Central Park, Manhattan
+Missing years: 2009
+
 
 S744860 
-Lat: 40.64, Lon: -73.76, Landmark: JFK Airport, Queens
+Lat: 40.64
+Lon: -73.76
+Landmark: JFK Airport, Queens
+Missing years:
