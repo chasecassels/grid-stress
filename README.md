@@ -9,8 +9,6 @@ Exploratory data analysis project to study how grid stress may change across NYC
 - [Zoning/Land Use Data Ingestion](#zoning)
 - [Preprocessing](#preproc)
 - [To-dos](#to-dos)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
@@ -29,6 +27,14 @@ bash filerun_import_processes.sh
 ## Zoning/Land Use Data Ingestion
 
 
+---
+
+## Preprocessing
+
+
+---
+
+## To-dos
 
 
 
