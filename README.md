@@ -5,8 +5,6 @@ Exploratory data analysis project to study how grid stress may change across NYC
 
 ---
 
-## Table of Contents
-
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -37,4 +35,5 @@ touch database/weather-data.db
 cd file-extraction
 bash filerun_import_processes.sh
 ```
+
 
