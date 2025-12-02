@@ -1,5 +1,3 @@
-# Grid Stress Exploratory Data Analysis
-
 **Author:** Chase Cassels  
 **Email:** chasecassels@gmail.com  
 
@@ -39,3 +37,4 @@ touch database/weather-data.db
 cd file-extraction
 bash filerun_import_processes.sh
 ```
+
