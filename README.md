@@ -1,4 +1,4 @@
-Chase Cassels
+Chase Cassels \n
 chasecassels@gmail.com
 
 1. Ingesting weather data from OSF API to an SQLite database:
@@ -17,6 +17,7 @@ $ bash filerun_import_processes.sh
 
 To-dos:
 -Parameterize data ingestion scripts
+
 
 
 
