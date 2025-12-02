@@ -1,3 +1,5 @@
+# NYC Grid Stress
+
 **Author:** Chase Cassels  
 **Email:** chasecassels@gmail.com  
 
@@ -42,6 +44,7 @@ Data sourcing:
 -Source grid use historical data
 -Source projected annual temperature rise data 
 -Create future weather data tables (emulate format of historical data and use averages + projected increases to fill)
+
 
 
 
