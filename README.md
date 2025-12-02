@@ -1,3 +1,12 @@
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+
 Chase Cassels  
 chasecassels@gmail.com  
 
@@ -22,6 +31,7 @@ $ bash filerun_import_processes.sh
 
 To-dos:
 -Parameterize data ingestion scripts
+
 
 
 
