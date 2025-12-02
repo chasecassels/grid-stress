@@ -1,15 +1,22 @@
 Chase Cassels
 chasecassels@gmail.com
 
-Weather data ingestion:
+Ingesting weather data from OSF API to an SQLite database:
 
-How to use:
+Create an empty db file 
+```
+weather-data.db
+```
+in the database directory and run 
+```
+run_import_processes.sh
+```
 
-Create an empty db file ```weather-data.db``` in database directory
 
 
 To-dos:
 
 Parameterize data ingestion scripts
+
 
 
