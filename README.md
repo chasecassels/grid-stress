@@ -1,6 +1,6 @@
 # NYC Grid Stress
 
-Exploratory data analysis project to study how grid stress may change across NYC due to temperature variance, climate change, land use changes, population change, and technological improvements.
+Exploratory data analysis project to study how grid stress may change across NYC due to climate change, land use changes, population growth, and technological changes.
 
 - [Data Ingestion](#ingest)
 - [Preprocessing](#preproc)
@@ -64,6 +64,7 @@ ML Research/Testing:
 Visualization:
 
 -Grafana?
+
 
 
 
