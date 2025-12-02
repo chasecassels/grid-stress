@@ -7,16 +7,17 @@
 
 Exploratory data analysis project to study how grid stress may change across NYC due to temperature variance, climate change, land use changes, population change, and technological improvements.
 
-- [Weather Data Ingestion](#weather)
-- [Zoning/Land Use Data Ingestion](#zoning)
+- [Data Ingestion](#ingest)
 - [Preprocessing](#preproc)
+- [ML](#ml)
+- [Mapping and Visualization](#display)
 - [To-dos](#to-dos)
 
 ---
 
-## Weather Data Ingestion
+## Data Ingestion
 
-To ingest Historical NYC Weather Data from the Open Science Foundation API into an empty SQLite database:
+Ingest Historical NYC Weather Data from the Open Science Foundation API into an empty SQLite database:
 
 ```
 touch database/weather-data.db
@@ -26,12 +27,17 @@ bash run_import_processes.sh
 
 ---
 
-## Zoning/Land Use Data Ingestion
+## Preprocessing
 
 
 ---
 
-## Preprocessing
+## ML
+
+
+---
+
+## Mapping and Visulization
 
 
 ---
@@ -41,9 +47,37 @@ bash run_import_processes.sh
 Data sourcing:
 
 -Source land-use historical data and future data  
+-Source population historical and future data
 -Source grid use historical data  
--Source projected annual temperature rise data   
+-Source annual temperature rise projections  
+
+
+Preprocessing:  
+  
 -Create future weather data tables (emulate format of historical data and use averages + projected increases to fill)  
+-Temporally downscale population and land use data  
+-Write and test Joins/Unions to create one comprehensive historical table and one comprehensive future table with an empty grid use column
+
+
+ML Research/Testing:
+
+-Research suitable models & mathematical justification (Random Forest / Neural Net / Time Series Models) 
+-Write a python script for training on comprehensive historical table (Scikit-learn)  
+-Write a script for predicting grid use column values based on training results  
+
+
+Visualization:
+
+-Grafana?
+
+
+
+
+
+
+
+
+
 
 
 
