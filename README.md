@@ -36,6 +36,12 @@ bash filerun_import_processes.sh
 
 ## To-dos
 
+Data sourcing:
+
+-Source land-use historical data and future data
+-Source grid use historical data
+-Source projected annual temperature rise data 
+-Create future weather data tables (emulate format of historical data and use averages + projected increases to fill)
 
 
 
