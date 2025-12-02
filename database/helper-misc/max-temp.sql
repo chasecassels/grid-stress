@@ -1,0 +1,1 @@
+SELECT max("Ta") FROM S725030

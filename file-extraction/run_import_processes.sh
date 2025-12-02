@@ -6,4 +6,4 @@ python3 get-nyc.py
 
 python3 load-csvs.py
 
-echo "Imports complete."
+echo "Imports complete."s
