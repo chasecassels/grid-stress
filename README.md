@@ -1,46 +1,41 @@
+# Grid Stress Exploratory Data Analysis
+
+**Author:** Chase Cassels  
+**Email:** chasecassels@gmail.com  
+
+Exploratory data analysis project to study how grid stress may change across NYC due to temperature variance, climate change, land use changes, population change, and technological improvements.
+
+---
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
+- [To-dos](#to-dos)
 - [Contributing](#contributing)
 - [License](#license)
 
+---
 
-Chase Cassels  
-chasecassels@gmail.com  
+## Prerequisites
 
-  
-  
-Exploratory data analysis project to learn about how grid stress may change across NYC due to temperature variance, 
-climate change, land use changes, population change, and technological improvements.
+Make sure you have the following installed:
 
-1. Ingesting weather data from OSF API to an SQLite database:
+- Python 3.x  
+- Bash 
+- SQLite  
 
-Create an empty db file in the database directory, then navigate to the file extraction directory to run the import processes: 
+---
+
+## Installation
+
+### 1. Ingest NYC Weather Data from Open Science Foundation API into an SQLite database.
+
+Create an empty database and run the data extraction scripts:
+
 ```
-$ touch database/weather-data.db
-$ cd file-extraction
-$ bash filerun_import_processes.sh
+touch database/weather-data.db
+cd file-extraction
+bash filerun_import_processes.sh
 ```
-
-2. Creating aggregates:
-
-3. Model training:
-
-
-To-dos:
--Parameterize data ingestion scripts
-
-
-
-
-
-
-
-
-
-
-
-
-
