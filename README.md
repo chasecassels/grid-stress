@@ -1,6 +1,9 @@
 Chase Cassels  
 chasecassels@gmail.com
 
+Exploratory data analysis project to learn about how grid stress may change across NYC due to temperature variance, 
+climate change, land use changes, population change, and technological improvements.
+
 1. Ingesting weather data from OSF API to an SQLite database:
 
 Create an empty db file in the database directory, then navigate to the file extraction directory to run the import processes: 
@@ -17,6 +20,7 @@ $ bash filerun_import_processes.sh
 
 To-dos:
 -Parameterize data ingestion scripts
+
 
 
 
