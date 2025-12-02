@@ -23,15 +23,16 @@ Exploratory data analysis project to study how grid stress may change across NYC
 
 ---
 
-## Ingest NYC Weather Data from Open Science Foundation API into an SQLite database.
+## Weather Data Ingestion
 
-Create an empty database file and run the data extraction scripts:
+To ingest NYC Weather Data from the Open Science Foundation API into an empty SQLite database:
 
 ```
 touch database/weather-data.db
 cd file-extraction
 bash filerun_import_processes.sh
 ```
+
 
 
 
