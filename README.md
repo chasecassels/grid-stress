@@ -56,8 +56,15 @@ Preprocessing:
   
 -Create future weather data tables (emulate format of historical data and use averages + projected increases to fill)  
 -Temporally downscale population and land use data  
--Write and test Joins/Unions to create one comprehensive historical table and one comprehensive future table with an  
- empty grid use column
+-Write and test Joins/Unions to create one comprehensive historical table and one comprehensive future table with an empty grid use column
+
+
+ML:
+
+-Research suitable models & mathematical justification  
+-Write a python script for training on comprehensive historical table (Scikit-learn)  
+-Write a script for predicting grid use column values based on training results
+
 
 
 
