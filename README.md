@@ -3,8 +3,7 @@
 
 ---
 
-Exploratory data analysis project to study how grid stress may change across NYC due to temperature  
-variance, climate change, land use changes, population change, and technological improvements.
+Exploratory data analysis project to study how grid stress may change across NYC due to temperature variance, climate change, land use changes, population change, and technological improvements.
 
 
 - [Prerequisites](#prerequisites)
@@ -37,6 +36,7 @@ touch database/weather-data.db
 cd file-extraction
 bash filerun_import_processes.sh
 ```
+
 
 
 
