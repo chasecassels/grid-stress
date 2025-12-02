@@ -31,6 +31,11 @@ bash run_import_processes.sh
 
 ---
 
+## Population Data Ingestion
+
+
+---
+
 ## Preprocessing
 
 
@@ -41,9 +46,17 @@ bash run_import_processes.sh
 Data sourcing:
 
 -Source land-use historical data and future data  
+-Source population historical and future data
 -Source grid use historical data  
--Source projected annual temperature rise data   
+-Source annual temperature rise projections  
+
+
+
+Preprocessing:  
+  
 -Create future weather data tables (emulate format of historical data and use averages + projected increases to fill)  
+-Temporally downscale population and land use data  
+-
 
 
 
