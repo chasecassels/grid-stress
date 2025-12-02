@@ -1,8 +1,4 @@
 # NYC Grid Stress
-
-**Author:** Chase Cassels  
-**Email:** chasecassels@gmail.com  
-
 ---
 
 Exploratory data analysis project to study how grid stress may change across NYC due to temperature variance, climate change, land use changes, population change, and technological improvements.
@@ -69,6 +65,7 @@ ML Research/Testing:
 Visualization:
 
 -Grafana?
+
 
 
 
