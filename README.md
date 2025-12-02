@@ -1,6 +1,8 @@
 Chase Cassels  
 chasecassels@gmail.com
 
+
+
 Exploratory data analysis project to learn about how grid stress may change across NYC due to temperature variance, 
 climate change, land use changes, population change, and technological improvements.
 
@@ -20,6 +22,7 @@ $ bash filerun_import_processes.sh
 
 To-dos:
 -Parameterize data ingestion scripts
+
 
 
 
