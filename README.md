@@ -1,5 +1,6 @@
 Chase Cassels  
-chasecassels@gmail.com
+chasecassels@gmail.com  
+
   
   
 Exploratory data analysis project to learn about how grid stress may change across NYC due to temperature variance, 
@@ -21,6 +22,7 @@ $ bash filerun_import_processes.sh
 
 To-dos:
 -Parameterize data ingestion scripts
+
 
 
 
