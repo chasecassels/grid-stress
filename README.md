@@ -16,7 +16,7 @@ Exploratory data analysis project to study how grid stress may change across NYC
 
 ## Weather Data Ingestion
 
-To ingest NYC Weather Data from the Open Science Foundation API into an empty SQLite database:
+To ingest Historical NYC Weather Data from the Open Science Foundation API into an empty SQLite database:
 
 ```
 touch database/weather-data.db
@@ -44,6 +44,7 @@ Data sourcing:
 -Source grid use historical data
 -Source projected annual temperature rise data 
 -Create future weather data tables (emulate format of historical data and use averages + projected increases to fill)
+
 
 
 
