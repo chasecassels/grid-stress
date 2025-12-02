@@ -61,9 +61,10 @@ Preprocessing:
 
 ML:
 
--Research suitable models & mathematical justification  
+-Research suitable models & mathematical justification (Random Forest / Neural Net / Time Series Models) 
 -Write a python script for training on comprehensive historical table (Scikit-learn)  
 -Write a script for predicting grid use column values based on training results
+
 
 
 
