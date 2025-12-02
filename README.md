@@ -21,7 +21,7 @@ To ingest Historical NYC Weather Data from the Open Science Foundation API into 
 ```
 touch database/weather-data.db
 cd file-extraction
-bash filerun_import_processes.sh
+bash run_import_processes.sh
 ```
 
 ---
@@ -44,6 +44,7 @@ Data sourcing:
 -Source grid use historical data  
 -Source projected annual temperature rise data   
 -Create future weather data tables (emulate format of historical data and use averages + projected increases to fill)  
+
 
 
 
