@@ -56,6 +56,9 @@ Preprocessing:
   
 -Create future weather data tables (emulate format of historical data and use averages + projected increases to fill)  
 -Temporally downscale population and land use data  
+-Write and test Joins/Unions to create one comprehensive historical table and one comprehensive future table with an  
+ empty grid use column
+
 
 
 
