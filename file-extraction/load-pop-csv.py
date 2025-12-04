@@ -12,11 +12,9 @@ df = pd.DataFrame()
 def process_input(df) -> pd.DataFrame:
     df = df.drop(df.columns[0], axis = 1)
     df = df.drop(df.columns[2::2], axis = 1)
-    print(df)
     df_with_names = df.copy()
     df = df_with_names.T
-    df = df.drop(df.columns[[1,5]], axis = 1)
-    print(df)
+    df = df.drop(df.columns[[0, 1, 5]], axis = 1)
     return df
 
 #import population csv into sqlite db
@@ -29,7 +27,8 @@ for filename in os.listdir(folder_path):
         parts = table_name.split("_")
         output_table_name = "nyc_population"
         df.index.values[0] = "Decade"
-        df.to_sql(output_table_name, conn, if_exists="replace", index=True, index_label = 'Year')
+        df = df.set_axis(list(range(len(df.columns))), axis=1)
+        df.to_sql(output_table_name, conn, if_exists="replace", index=True)
         print(f"Imported '{filename}' into table '{output_table_name}'", flush=True)
 
 
