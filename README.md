@@ -15,14 +15,18 @@ Exploratory data analysis project to study how grid stress may change across NYC
 Ingest Historical NYC Weather Data from the Open Science Foundation API into an empty SQLite database:
 
 ```
-touch database/weather-data.db
-cd file-extraction
-bash run_import_processes.sh
+$ touch database/weather-data.db
+$ cd file-extraction
+$ bash weather-import.sh
 ```
+
+
 
 ---
 
 ## Preprocessing
+
+
 
 
 ---
@@ -64,6 +68,7 @@ ML Research/Testing:
 Visualization:  
 
 -Grafana?  
+
 
 
 
