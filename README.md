@@ -15,17 +15,28 @@ Exploratory data analysis project to study how grid stress may change across NYC
 Ingest Historical NYC Weather Data from the Open Science Foundation API into an empty SQLite database:
 
 ```
-$ touch database/weather-data.db
+$ touch database/nyc-data.db
 $ cd file-extraction
 $ bash weather-import.sh
+```  
+
+Temporally downscale (currently using basic linear interpolation) and ingest historic and future nyc population data:
+
 ```
-
-
+$ python3 load-interp-pop-csv.py
+```
 
 ---
 
 ## Preprocessing
 
+Using a database manager or via command line, execute following sql scripts in order to create necessary tables:
+
+```
+combine-source-tables.sql
+all-historic.sql
+nec-vals.sql
+```
 
 
 
