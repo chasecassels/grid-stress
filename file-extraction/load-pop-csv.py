@@ -8,7 +8,7 @@ conn = sqlite3.connect(db_path)
 
 file = 'New_York_City_Population_by_Borough,_1950_-_2040_20251203.csv'
 
-#import all csvs into sqlite db
+#import population csv into sqlite db
 for filename in os.listdir(folder_path):
     if filename == file:
         file_path = os.path.join(folder_path, filename)
