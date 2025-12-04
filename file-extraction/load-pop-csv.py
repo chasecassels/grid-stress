@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
 import sqlite3
 import os
 
@@ -17,29 +19,40 @@ def process_input(df) -> pd.DataFrame:
     df = df.drop(df.columns[[0, 1, 5]], axis = 1)
     return df
 
+#temporal downscaling to minutes (unnecessary but why not), linear interpolation (improve later)
+def interpolate(df) -> pd.DataFrame:
+    df.index = df.index.astype(int)
+    years = np.arange(1950, 2040)
+    df_yearly = df.reindex(years)
+    df_yearly = df_yearly.interpolate(method='linear')
+    return df_yearly
+
+
 #import population csv into sqlite db
-for filename in os.listdir(folder_path):
-    if filename == file:
+for name in os.listdir(folder_path):
+    if name == file:
+        filename = name
         file_path = os.path.join(folder_path, filename)
         df = pd.read_csv(file_path)
         df = process_input(df)
         table_name = os.path.splitext(filename)[0]
+
         parts = table_name.split("_")
         output_table_name = "nyc_population"
         df.index.values[0] = "Decade"
+
         df = df.set_axis(list(range(len(df.columns))), axis=1)
+        df = df.iloc[1:].replace(',', '', regex=True).apply(pd.to_numeric, errors='coerce')
         df.to_sql(output_table_name, conn, if_exists="replace", index=True)
+
         print(f"Imported '{filename}' into table '{output_table_name}'", flush=True)
 
-
-#temporal downscaling to minutes (unnecessary but why not)
-#def interpolate(df) -> DataFrame:
-
-
-
-
-
-
+if df:
+    df.plot()
+    plt.title("Line Plot of DataFrame")
+    plt.xlabel("Index")
+    plt.ylabel("Values")
+    plt.show()
 
 conn.commit()
 conn.close()
