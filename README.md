@@ -56,29 +56,29 @@ nec-vals.sql
 
 Data sourcing:  
 
--Source land-use historical data and future data  
--Source population historical and future data  
--Source grid use historical data  
--Source annual temperature rise projections  
+- [ ] Source land-use historical data and future data  
+- [x] Source population historical and future data  
+- [ ] Source grid use historical data  
+- [ ] Source annual temperature rise projections  
 
 
 Preprocessing:  
   
--Create future weather data tables (emulate format of historical data and use averages + projected increases to fill)  
--Temporally downscale population and land use data  
--Write and test Joins/Unions to create one comprehensive historical table and one comprehensive future table with an empty grid use column  
+- [ ] Create future weather data tables (emulate format of historical data and use averages + projected increases to fill)  
+- [ ] Temporally downscale population and land use data (pop data downscaling in progress) 
+- [ ] Write and test Joins/Unions to create one comprehensive historical table and one comprehensive future table with an empty grid use column  
 
 
 ML Research/Testing:  
 
--Research suitable models & mathematical justification (Random Forest / Neural Net / Time Series Models)  
--Write a python script for training on comprehensive historical table (Scikit-learn)  
--Write a script for predicting grid use column values based on training results  
+- [ ] Research suitable models & mathematical justification (Random Forest / Neural Net / Time Series Models)  
+- [ ] Write a python script for training on comprehensive historical table (Scikit-learn)  
+- [ ] Write a script for predicting grid use column values based on training results  
 
 
 Visualization:  
 
--Grafana?  
+- [ ] Grafana?  
 
 
 
