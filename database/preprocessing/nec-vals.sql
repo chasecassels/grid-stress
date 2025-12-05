@@ -1,4 +1,5 @@
 CREATE TABLE nyc_weather_historic AS SELECT
+	Location,
 	"Year",
 	"Month",
 	"Day",

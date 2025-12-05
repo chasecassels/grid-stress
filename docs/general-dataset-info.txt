@@ -1,3 +1,13 @@
+For simplicities sake, despite LaGuardia and JFK Both technically being in Queens, this project will
+associate LaGuardia with Queens and JFK with Brooklyn weather-wise due to physical location and geographical 
+similarities.
+
+Legend:
+
+0:JFK
+1:CentralPark
+2:LaGuardia
+
 
 Weather data variable information:
 https://www.nature.com/articles/s41597-024-04238-4/tables/1

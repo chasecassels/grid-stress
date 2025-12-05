@@ -19,12 +19,12 @@ def process_input(df) -> pd.DataFrame:
     df = df.drop(df.columns[[0, 1, 5]], axis = 1)
     return df
 
-#temporal downscaling to minutes (unnecessary but why not), linear interpolation (improve later)
+#temporal downscaling to hours (unnecessary but why not), linear interpolation (improve later)
 def interpolate(df) -> pd.DataFrame:
     df.index = df.index.astype(int)
     years = np.arange(1950, 2040+1)
     df_yearly = df.reindex(years)
-    df_yearly = df_yearly.interpolate(method='linear')
+    df_yearly = df_yearly.interpolate(method='cubicspline')
     return df_yearly
 
 #import population csv into sqlite db
