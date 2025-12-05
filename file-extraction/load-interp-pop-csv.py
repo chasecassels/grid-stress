@@ -5,7 +5,7 @@ import sqlite3
 import os
 
 folder_path = "../source-data"
-db_path = "../database/weather-data.db"
+db_path = "../database/nyc-data.db"
 conn = sqlite3.connect(db_path)
 file = 'New_York_City_Population_by_Borough,_1950_-_2040_20251203.csv'
 df = pd.DataFrame()
